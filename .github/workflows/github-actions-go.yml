@@ -10,6 +10,6 @@ on:
 
 jobs:
   call-workflow:
-    uses: ./.github/workflows/learn_github_actions-go.yml
+    uses: ./.github/workflows/learn-github-actions-go.yml
 
   
