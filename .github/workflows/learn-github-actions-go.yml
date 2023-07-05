@@ -9,48 +9,7 @@ on:
       - main
 
 jobs:
-  build:
-    name: Build and Test
-    runs-on: ubuntu-latest
+  call-workflow:
+    uses: bsrivastava/go-sample-poc2/.github/workflows/learn_github_actions-go.yml@v1
 
-    steps:
-      - name: Checkout repository
-        uses: actions/checkout@v2
-
-      - name: Set up Go
-        uses: actions/setup-go@v2
-        with:
-          go-version: 1.x # Replace with the desired Go version
-
-      - name: Cache dependencies
-        id: cacheStep
-        uses: actions/cache@v2
-        with:
-          path: ~/go/pkg/mod
-          key: ${{ runner.os }}-go-${{ hashFiles('**/go.sum') }}
-          restore-keys: |
-            ${{ runner.os }}-go-
-
-      - name: Install dependencies
-        if: steps.cacheStep.outputs.cache-hit != 'true'
-        run: go mod download
-
-      - name: Build application
-        run: |
-          go build
-
-      - name: Upload Artifact
-        uses: actions/upload-artifact@v3
-        with:
-          name: welcome
-          path: welcome
-
-      - name: Build Docker image
-        uses: docker/build-push-action@v2
-        with:
-          context: .
-          push: false
-          tags: go-sample/welcome-go:latest # Replace with your Docker image repository and tag
-
-      - name: Run tests
-        run: go test
+  
