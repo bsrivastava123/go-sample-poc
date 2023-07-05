@@ -10,6 +10,6 @@ on:
 
 jobs:
   call-workflow:
-    uses: bsrivastava/go-sample-poc2/.github/workflows/learn_github_actions-go.yml@main
+    uses: bsrivastava123/go-sample-poc2/.github/workflows/learn_github_actions-go.yml@main
 
   
