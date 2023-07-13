@@ -7,12 +7,12 @@ on:
   pull_request:
     branches:
       - main
-      
+
 jobs:
   call-workflow:
     uses: bsrivastava123/go-sample-poc2/.github/workflows/learn-github-actions-go.yml@main
     with:
-      service-name: welcome
+      artifact-name: welcome
       working-directory: 'src'
 
   
