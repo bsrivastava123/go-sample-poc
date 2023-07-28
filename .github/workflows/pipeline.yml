@@ -14,10 +14,13 @@ jobs:
     with:
       artifact-name: aa-suggestions
       working-directory: 'aa-suggestions'
-      
+
 
   call-helm-workflow:
     uses: bsrivastava123/go-sample-library/.github/workflows/HelmChartPipeline.yaml@main
+    needs: [ call-workflow ]
     with:
       chart-directory: aa-suggestions
-    needs: [ call-workflow ]
+      version: ${{needs.call-workflow.outputs.version}}
+    
+    
