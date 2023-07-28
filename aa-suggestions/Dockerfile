@@ -11,7 +11,7 @@ COPY . .
 RUN go mod download
 
 # Build the Go application
-RUN go build -o welcome-go .
+RUN go build -o aa-suggestions .
 
 # Set the entry point for the container
-ENTRYPOINT ["./welcome-go"]
+ENTRYPOINT ["./aa-suggestions"]

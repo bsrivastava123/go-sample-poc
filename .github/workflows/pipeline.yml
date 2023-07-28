@@ -1,0 +1,22 @@
+name: Go CI Pipeline
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+  
+jobs:
+  call-workflow:
+    uses: bsrivastava123/go-sample-library/.github/workflows/pipeline.yml@main
+    with:
+      artifact-name: aa-suggestions
+      working-directory: 'aa-suggestions'
+
+  call-helm-workflow:
+    uses: bsrivastava123/go-sample-library/.github/workflows/HelmChartPipeline.yaml@main
+    with:
+      chart-directory: aa-suggestions
+    needs: [ call-workflow ]

@@ -1,0 +1,9 @@
+# Default values for aa-suggestions-chart.
+replicaCount: 1
+image:
+  repository: aa-suggestions/aa-suggestions
+  tag: latest
+  pullPolicy: Always
+service:
+  port: 8080
+  type: ClusterIP

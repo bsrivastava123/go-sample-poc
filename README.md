@@ -1,1 +1,2 @@
-# go-sample-poc2
+# aa-suggestions
+aa-suggestions Go backend service repository
