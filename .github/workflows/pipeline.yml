@@ -15,7 +15,6 @@ jobs:
       artifact-name: aa-suggestions
       working-directory: 'aa-suggestions'
 
-
   call-helm-workflow:
     uses: bsrivastava123/go-sample-library/.github/workflows/HelmChartPipeline.yaml@main
     needs: [ call-workflow ]
