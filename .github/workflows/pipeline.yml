@@ -12,4 +12,4 @@ jobs:
   call-workflow:
     uses: bsrivastava123/go-sample-library/.github/workflows/buildFrontendPipeline.yml@test2
     with:
-      do_require: "false"
+      do_require: false
