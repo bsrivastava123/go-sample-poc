@@ -10,16 +10,6 @@ on:
   
 jobs:
   call-workflow:
-    uses: bsrivastava123/go-sample-library/.github/workflows/pipeline.yml@main
+    uses: bsrivastava123/go-sample-library/.github/workflows/buildFrontendPipeline.yml@test2
     with:
-      artifact-name: aa-suggestions
-      working-directory: 'aa-suggestions'
-
-  call-helm-workflow:
-    uses: bsrivastava123/go-sample-library/.github/workflows/HelmChartPipeline.yaml@main
-    needs: [ call-workflow ]
-    with:
-      chart-directory: aa-suggestions
-      version: ${{needs.call-workflow.outputs.version}}
-    
-    
+      do_require: "true"
