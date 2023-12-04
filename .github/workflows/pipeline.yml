@@ -7,7 +7,6 @@ on:
   pull_request:
     branches:
       - main
-
 jobs:
   call-workflow:
     uses: bsrivastava123/go-sample-library/.github/workflows/buildFrontendPipeline.yml@test2
